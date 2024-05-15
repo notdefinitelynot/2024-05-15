@@ -30,8 +30,8 @@
                    Grid.ColumnSpan="2"
                    />
             <StackPanel Grid.Row="1">
-                <RadioButton Content="Home" Command="openHome" Style="{StaticResource MenuButton}"/>
-                <RadioButton Content="Users" Command="openUsers" Style="{StaticResource MenuButton}"/>
+                <RadioButton Content="Home" Command="{Binding openHome}" Style="{StaticResource MenuButton}"/>
+                <RadioButton Content="Users" Command="{Binding openUsers}" Style="{StaticResource MenuButton}"/>
                 <RadioButton Content="Close" Style="{StaticResource MenuButton}"/>
             </StackPanel>
             <ContentControl Content="{Binding CurrentView}" Grid.Row="1" Grid.Column="1"/>

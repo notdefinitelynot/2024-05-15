@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfNaruto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfNaruto"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="920"
+        AllowsTransparency="True"
+        WindowStyle="none"
+        Background="Transparent">
+    <Border Background="#272537" CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        
+
+            <TextBlock Text="Modern UI" 
+                   Foreground="white"
+                   FontSize="22"
+                   VerticalAlignment="Stretch"
+                   Padding="50,20"
+                   MouseLeftButtonDown="TextBlock_MouseDown"
+                   Grid.ColumnSpan="2"
+                   />
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home" Command="openHome" Style="{StaticResource MenuButton}"/>
+                <RadioButton Content="Users" Command="openUsers" Style="{StaticResource MenuButton}"/>
+                <RadioButton Content="Close" Style="{StaticResource MenuButton}"/>
+            </StackPanel>
+            <ContentControl Content="{Binding CurrentView}" Grid.Row="1" Grid.Column="1"/>
+        </Grid>
+    </Border>
+</Window>
